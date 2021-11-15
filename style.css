@@ -1,0 +1,168 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni
+s pribyvajici sirkou pridavame media query pro
+středně široké obrazovky:
+@media (min-width: 480px) {
+}
+široké obrazovky
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+.menu {
+    padding: 0.5rem;
+}
+
+.main h1 {
+    font-weight: 800;
+    font-size: 1.75rem;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.2rem;
+    font-family: Raleway;
+    margin: 0;
+    text-shadow: 1px 1px grey;
+    padding: 0.5rem;
+    color: white;
+}
+
+h2, 
+a {
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-family: source sans pro;
+    margin: 0;
+    text-shadow: 1px 1px grey;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-between;
+}
+.main {
+    display: flex;
+    background-image: url(images/salat.jpg);
+    flex-direction: column-reverse;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: white 1px solid;
+    justify-content: space-between;
+}
+
+.chlebicek, 
+.tacos,
+.pita,
+.burger {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 90px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: white 1px solid;
+    justify-content: space-between;
+}
+.chlebicek {
+    background-image: url(images/chlebicek.jpg);
+}
+
+.tacos {
+    background-image: url(images/tacos.jpg);
+}
+
+.pita {
+    background-image: url(images/cizrna.jpg);
+}
+
+.burger {
+    background-image: url(images/burger.jpg);
+}
+
+@media screen and (min-width: 480px) {
+    .main h1 {
+        font-size: 2rem;
+    }
+    h1 {
+        font-size: 1.5rem ;
+    }
+    .main {
+        min-height: 250px;
+    }
+    .maly-recept {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .chlebicek, 
+    .tacos,
+    .pita,
+    .burger {
+        min-height: 150px;
+        flex-basis: 50%;
+}   
+}
+
+@media screen and (min-width: 860px) {
+    .main h1 {
+        font-size: 3rem;
+    }
+    h1 {
+        font-size: 1.75rem;
+        padding: 1.25rem;
+    }
+    h2, 
+    a   { 
+        padding: 1.2rem;
+    }
+     .menu {
+        display: flex;
+        flex-direction: row;
+    }
+    .main {
+        min-height: 400px;
+        display: flex;
+        flex-basis: calc(100%/3);
+    }
+    .maly-recept {
+        flex-basis: calc(100%*2/3);
+    }
+    .chlebicek,
+    .tacos,
+    .pita,
+    .burger {
+        min-height: 200px;
+    }
+
+}
